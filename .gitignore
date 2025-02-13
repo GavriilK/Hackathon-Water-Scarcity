@@ -4,5 +4,8 @@ data/
 # Ignore the dataset folder and all its subdirectories and files
 dataset/
 
+#ignore the venv folder and all its subdirectories and files
+.venv/
 models/
 .DS_Store
+
