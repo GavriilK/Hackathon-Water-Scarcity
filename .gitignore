@@ -8,4 +8,5 @@ dataset/
 .venv/
 models/
 .DS_Store
+*.pyc
 

@@ -102,8 +102,8 @@ def plot_hydrographic_maps(
         bbox (dict): Dictionary containing bounding box coordinates for each area.
     """
     fig, axes = plt.subplots(1, 4, figsize=(15, 4), subplot_kw={'projection': ccrs.PlateCarree()})
-    fig.suptitle("French Hydrographic Division - 4 Levels", fontsize=16)
-    BBOX_FRANCE_DISPLAY = [bbox[area][0], bbox[area][2], bbox[area][1], bbox[area][3]]
+    fig.suptitle(f"{area} Hydrographic Division - 4 Levels", fontsize=16)
+    BBOX_DISPLAY = [bbox[area][0], bbox[area][2], bbox[area][1], bbox[area][3]]
     
     titles = [
         "Hydrographic Region (1st Order)",
@@ -117,7 +117,7 @@ def plot_hydrographic_maps(
         gdf_dict[key][area].plot(ax=axes[i], color=color, edgecolor="black")
         axes[i].set_title(titles[i])
         axes[i].axis("off")
-        axes[i].set_extent(BBOX_FRANCE_DISPLAY, crs=ccrs.PlateCarree())
+        axes[i].set_extent(BBOX_DISPLAY, crs=ccrs.PlateCarree())
         axes[i].add_feature(cfeature.BORDERS, linestyle=':', edgecolor='black', linewidth=1, zorder=7)
         axes[i].add_feature(cfeature.COASTLINE, linewidth=0.8, zorder=7)
         axes[i].add_feature(cfeature.LAKES, facecolor='lightblue', zorder=7)
